@@ -14,7 +14,21 @@
   <br>
   <div class="row">
     <div class="col">
+      <input type="text" class="form-control" placeholder="Data de Nascimento">
+    </div>
+    <div class="col invisible">
+    </div>
+    <div class="col invisible">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
       <input type="text" class="form-control" placeholder="CPF">
+    </div>
+    <div class="col invisible">
+    </div>
+    <div class="col invisible">
     </div>
     <!-- arrumar isso -->
     <div class="col">
@@ -34,7 +48,8 @@
     <div class="col">
       <input type="text" class="form-control" placeholder="E-mail">
     </div>
-    <br>
+    <div class="col invisible">
+    </div>
   </div>
   <br>
   <div class="row">
