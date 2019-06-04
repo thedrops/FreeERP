@@ -14,4 +14,5 @@
 Route::prefix('cliente')->group(function() {
     Route::get('/', 'ClienteController@index');
     Route::get('/cadastrar', 'ClienteController@create');
+    Route::get('/juridico', 'ClienteController@juridico');
 });

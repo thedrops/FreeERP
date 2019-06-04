@@ -7,14 +7,30 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
 class ClienteController extends Controller
-{
+{   
+    public function __construct() {
+        $menu = [
+            ['icon' => 'person_add', 'tool' => 'Cadastro Fisico', 'route' => '/cliente/cadastrar'],
+            ['icon' => 'work', 'tool' => 'Cadastro Juridico', 'route' => '/cliente/juridico'],
+
+        ];
+
+        $this->dadosTemplate = [
+            'moduleInfo' => [
+                'icon' => 'face',
+                'name' => 'Cliente'
+            ],
+            'menu' => $menu,
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      * @return Response
      */
     public function index()
     {
-        return view('cliente::index');
+        return view('cliente::index', $this->dadosTemplate);
     }
 
     /**
@@ -23,8 +39,12 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        // return view('cliente::create');
-        return 'testar create';
+        return view('cliente::create', $this->dadosTemplate);
+    }
+
+    public function juridico()
+    {
+        return view('cliente::juridico', $this->dadosTemplate);
     }
 
     /**
