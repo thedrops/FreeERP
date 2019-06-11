@@ -57,6 +57,7 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
 
+        //Cliente
         $dadosCliente = [
             'nome'              => $request->nome,
             'data_nascimento'   => $request->data_nascimento,
@@ -66,6 +67,7 @@ class ClienteController extends Controller
         
         $cliente = ClienteFisico::create($dadosCliente);
 
+        //CPF
         $cpf = [
             'tipo_documento_id' => 1,
             'numero' => $request->cpf
@@ -81,6 +83,7 @@ class ClienteController extends Controller
             'modelo' => 'Documento'
         ]);
 
+        //EMAIL
         $email = [
             'email' => $request->email
         ];
@@ -94,6 +97,8 @@ class ClienteController extends Controller
             'destino_id' => $enderecoEmail->id,
             'modelo' => 'Email'
         ]);
+
+        
 
         return back()->with("success", "O cliente foi cadastrado com sucesso!");
 
