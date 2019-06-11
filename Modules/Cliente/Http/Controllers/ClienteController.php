@@ -60,7 +60,7 @@ class ClienteController extends Controller
         $dadosCliente = [
             'nome'              => $request->nome,
             'data_nascimento'   => $request->data_nascimento,
-            'sexo'              => 1,
+            'sexo'              => $request->customRadioInline1,
             'tipo_cliente_id'   => 0
         ];
         
