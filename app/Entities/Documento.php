@@ -1,5 +1,5 @@
 <?php
-namespace app\Entities;
+namespace App\Entities;
 use Illuminate\Database\Eloquent\Model;
 
 class Documento extends Model{
@@ -11,7 +11,7 @@ class Documento extends Model{
     public $timestamps = false;
 
     public function tipo_documento(){
-        return $this->belongsTo('app\Entities\TipoDocumento','tipo_documento_id');
+        return $this->belongsTo('App\Entities\TipoDocumento','tipo_documento_id');
     }
     
 }   

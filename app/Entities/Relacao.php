@@ -1,5 +1,5 @@
 <?php
-namespace app\Entities;
+namespace App\Entities;
 use Illuminate\Database\Eloquent\Model;
 
 class Relacao extends Model{
@@ -11,7 +11,7 @@ class Relacao extends Model{
     public $timestamps = false;
 
     public function dados(){
-        return $this->belongsTo("app\Entities\\$this->modelo", 'destino_id');
+        return $this->belongsTo("App\Entities\\$this->modelo", 'destino_id');
     }
 
 }
