@@ -32,7 +32,7 @@
   <br>
   <div class="row">
     <div class="col">
-      <input type="text" name="cpf" class="form-control" placeholder="CPF">
+      <input type="text" name="cpf" id="cpf" class="form-control" placeholder="CPF">
     </div>
     <div class="col invisible">
     </div>
@@ -54,7 +54,7 @@
   <br>
   <div class="row">
     <div class="col">
-      <input type="email" name="email" class="form-control" placeholder="E-mail">
+      <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
     </div>
     <div class="col invisible">
     </div>
@@ -65,16 +65,16 @@
       <input type="text" name="telefone" id="telefone" class="form-control" placeholder="Telefone">
     </div>
     <div class="col">
-      <input type="text" name="celular" class="form-control" placeholder="Celular">
+      <input type="text" name="celular" id="celular" class="form-control" placeholder="Celular">
     </div>
   </div>
   <br>
   <div class="row">
     <div class="col">
-      <input type="text" name="telefone2" class="form-control" placeholder="Telefone (opcional)">
+      <input type="text" name="telefone2" id="telefone2" class="form-control" placeholder="Telefone (opcional)">
     </div>
     <div class="col">
-      <input type="text" name="celular2" class="form-control" placeholder="Celular (opcional)">
+      <input type="text" name="celular2" id="celular2" class="form-control" placeholder="Celular (opcional)">
     </div>
     
   </div>
@@ -112,25 +112,28 @@
           </select>
     </div>
     <div class="col">
-      <input type="text" name="cidade" class="form-control" placeholder="Cidade">
+      <input type="text" name="cidade" id="cidade" class="form-control" placeholder="Cidade">
     </div>
   </div>
   <br>
   <div class="row">
     <div class="col">
-      <input type="text" name="endereco" class="form-control" placeholder="Endereço">
+      <input type="text" name="endereco" id="endereco" class="form-control" placeholder="Endereço">
+    </div>
+    <div class="col2">
+      <input type="text" name="numero" id="numero" class="form-control" placeholder="Nº">
     </div>
     <div class="col">
-      <input type="text" name="complemento" class="form-control" placeholder="Complemento">
+      <input type="text" name="complemento" id="complemento" class="form-control" placeholder="Complemento">
     </div>
   </div>
   <br>
   <div class="row">
     <div class="col">
-      <input type="text" name="bairro" class="form-control" placeholder="Bairro">
+      <input type="text" name="bairro" id="bairro" class="form-control" placeholder="Bairro">
     </div>
     <div class="col">
-      <input type="text" name="cep" class="form-control" placeholder="CEP">
+      <input type="text" name="cep" id="cep" class="form-control" placeholder="CEP">
     </div>
   </div>
   <br>

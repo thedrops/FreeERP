@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Cliente\Entities\ClienteFisico;
-use App\Entities\{Relacao, Documento, Email, Telefone};
+use App\Entities\{Relacao, Documento, Email, Telefone, Cidade, Estado};
 
 class ClienteController extends Controller
 {   
@@ -161,6 +161,27 @@ class ClienteController extends Controller
             'destino_id' => $celularDois->id,
             'modelo' => 'Telefone'
         ]);
+
+        //ESTADO
+        
+
+        //Endereço
+        // $endereco = [
+        //     'logradouro' => $request->endereco,
+        //     'numero' => $request->numero,
+        //     'bairro' => $request->bairro,
+        //     'logradouro' => $request->endereco,
+        // ];
+
+        // $telefoneUm = Telefone::create($telefone);
+
+        // Relacao::create([
+        //     'tabela_origem' => 'cliente',
+        //     'origem_id' => $cliente->id,
+        //     'tabela_destino' => 'telefone',
+        //     'destino_id' => $telefoneUm->id,
+        //     'modelo' => 'Telefone'
+        // ]);
 
         return back()->with("success", "O cliente foi cadastrado com sucesso!");
 
