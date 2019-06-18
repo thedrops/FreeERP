@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Cliente\Entities\ClienteFisico;
-use App\Entities\{Relacao, Documento, Email};
+use App\Entities\{Relacao, Documento, Email, Telefone};
 
 class ClienteController extends Controller
 {   
@@ -98,7 +98,69 @@ class ClienteController extends Controller
             'modelo' => 'Email'
         ]);
 
-        
+        //TELEFONE
+        $telefone = [
+            'numero' => $request->telefone,
+            'tipo_id'  => 1
+        ];
+
+        $telefoneUm = Telefone::create($telefone);
+
+        Relacao::create([
+            'tabela_origem' => 'cliente',
+            'origem_id' => $cliente->id,
+            'tabela_destino' => 'telefone',
+            'destino_id' => $telefoneUm->id,
+            'modelo' => 'Telefone'
+        ]);
+
+        //TELEFONE 2
+        $telefone2 = [
+            'numero' => $request->telefone2,
+            'tipo_id'  => 1
+        ];
+
+        $telefoneDois = Telefone::create($telefone2);
+
+        Relacao::create([
+            'tabela_origem' => 'cliente',
+            'origem_id' => $cliente->id,
+            'tabela_destino' => 'telefone',
+            'destino_id' => $telefoneDois->id,
+            'modelo' => 'Telefone'
+        ]);
+
+        //CELULAR
+        $celular = [
+            'numero' => $request->celular,
+            'tipo_id'  => 2
+        ];
+
+        $celularUm = Telefone::create($celular);
+
+        Relacao::create([
+            'tabela_origem' => 'cliente',
+            'origem_id' => $cliente->id,
+            'tabela_destino' => 'telefone',
+            'destino_id' => $celularUm->id,
+            'modelo' => 'Telefone'
+        ]);
+
+        //CELUALR2
+        $celular2 = [
+            'numero' => $request->celular2,
+            'tipo_id'  => 2
+        ];
+
+        $celularDois = Telefone::create($celular2);
+
+        Relacao::create([
+            'tabela_origem' => 'cliente',
+            'origem_id' => $cliente->id,
+            'tabela_destino' => 'telefone',
+            'destino_id' => $celularDois->id,
+            'modelo' => 'Telefone'
+        ]);
 
         return back()->with("success", "O cliente foi cadastrado com sucesso!");
 

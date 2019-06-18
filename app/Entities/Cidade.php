@@ -6,7 +6,7 @@ class Cidade extends Model{
 
     protected $table = 'cidade';
 
-    protected $fillable = ['nome'];
+    protected $fillable = ['nome', 'estado_id'];
 
     public $timestamps = false;
 

@@ -37,4 +37,14 @@ class ClienteFisico extends Model
         return $this->emailRelacao->dados();
     }
 
+    public function telefoneRelacao(){
+        return $this->hasOne('app\Entities\Relacao', 'origem_id')
+            ->where('tabela_origem','cliente')
+            ->where('tabela_destino','telefone');
+    }
+
+    public function telefone(){
+        return $this->telefoneRelacao->dados();
+    }
+
 }
