@@ -47,4 +47,13 @@ class ClienteFisico extends Model
         return $this->telefoneRelacao->dados();
     }
 
+    public function enderecoRelacao(){
+        return $this->hasOne('app\Entities\Relacao', 'origem_id')
+            ->where('tabela_origem','cliente')
+            ->where('tabela_destino','endereco');
+    }
+
+    public function endereco(){
+        return $this->enderecoRelacao->dados();
+    }
 }
