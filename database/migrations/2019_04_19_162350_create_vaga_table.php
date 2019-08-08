@@ -17,6 +17,7 @@ class CreateVagaTable extends Migration
             $table->integer('id', true);
             $table->string('cargo');
             $table->double('salario',8,2);
+            $table->integer('quantidade');
             $table->string('descricao');
             $table->string('escolaridade');
             $table->string('status');
