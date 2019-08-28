@@ -5,7 +5,7 @@
     <div class="card-header"><h3>Vaga</h3></div>
     <div class="card-body">
               
-    <form action="{{ $data['url'] }}" method="POST">
+    <form action="recrutamento/Vaga/" method="POST">
         {{ csrf_field() }}
         @if($data['model'])
             @method('PUT')

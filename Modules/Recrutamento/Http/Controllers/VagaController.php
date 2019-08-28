@@ -74,6 +74,7 @@ class VagaController extends Controller
             $vaga->salario = $salario;
             $vaga->cargo = $request->cargo;
             $vaga->status = $request->status;
+            $vaga->quantidade = $request->quantidade;
             $vaga->descricao = $request->descricao;
             $vaga->escolaridade = $request->escolaridade;
             $vaga->save();

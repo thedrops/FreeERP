@@ -1,26 +1,85 @@
 @extends('template')
 @section('content')
-    <div class="pull-right"><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#nova_vaga" >Nova Vaga</button></div>
-    <!-- Modal -->
-    <div class="modal fade" id="nova_vaga" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-            <span aria-hidden="true">&times;</span>
-            </button>
+    
+    
+    <div class="float-right" style="margin-bottom:10px;"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#nova_vaga" >
+    Nova Vaga</button></div>
+        <!-- Modal Create -->
+        <div class="modal fade" id="nova_vaga" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cadastro de Vaga</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <form action="{{url('recrutamento/Vaga')}}" method="POST">
+                {{ csrf_field() }}
+               
+
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <label for="cargo" class="control-label">Cargo</label>
+                            <input type="text" name="cargo" id="cargo" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label for="numero_vagas" class="control-label">Número de Vagas</label>
+                            <input type="number" name="quantidade" id="numero_vagas" class="form-control" >
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <label for="salario" class="control-label">Salário</label>
+                            <input type="text" maxlength="10" min='0' name="salario" id="money" class="form-control money" >
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label for="escolaridade">Escolaridade</label>
+                            <select class="form-control" id="escolaridade" name='escolaridade'>
+                                <option value=''>Escolha uma opção</option>
+                                <option value='fundamental'>Ensino Fundamental</option>
+                                <option value='medio'>Ensino Médio</option>
+                                <option value='tecnico'>Ensino Técnico</option>
+                                <option value='superior'>Ensino Superior</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-group col-sm-6">
+                            <label for="status">Status</label>
+                            <select class="form-control" id="status" name='status'>
+                                <option value=''>Escolha uma opção</option>
+                                <option value='iniciado'>Iniciado</option>
+                                <option value='disponivel'>Disponível</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                                <label for="descricao" class="control-label">Descrição da Vaga</label>
+                                <textarea class="form-control"  name="descricao" id="descricao" rows="3"></textarea>
+                        </div>
+                    </div>
+            </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Adicionar Vaga</button>
+                </div>
+                </form>
+            </div>
         </div>
-        <div class="modal-body">
-            ...
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Salvar mudanças</button>
-        </div>
-        </div>
-    </div>
-    </div>
+        <!-- End Modal Create -->
+
+
 
 
     
@@ -54,5 +113,10 @@
         </div>
 
     </div>
-    <a class="btn btn-success" href="{{ url('recrutamento/Vaga/create') }}">Nova Vaga</a>
+@endsection
+
+@section('js')
+<script>
+$('.money').mask('000.000,00', {reverse: true});
+</script>
 @endsection
